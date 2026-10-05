@@ -130,6 +130,9 @@
   /* Finding box */
   .finding{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--shadow);font-size:14px;margin-top:18px;}
   .finding .flabel{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--accent);margin-bottom:6px;}
+  .finding ul{margin-top:10px;padding-left:20px;}
+  .finding ul li{margin-bottom:7px;}
+  .finding ul li:last-child{margin-bottom:0;}
 
   table{width:100%;border-collapse:collapse;font-size:13.5px;}
   th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);}
@@ -181,37 +184,52 @@
   <div class="slide-inner">
     <div class="slide-eyebrow">Страница 1 / 3</div>
     <div class="slide-title">Турция</div>
-    <div class="slide-sub">Август 2026 (факт) и план на сентябрь–октябрь. Данные взяты из <a href="https://github.com/JoJ-se/incas-geo-expansion-pack" target="_blank" rel="noopener">incas-geo-expansion-pack</a>.</div>
+    <div class="slide-sub">Сентябрь и октябрь 2026 (факт) — и план по локальному гейту.</div>
 
     <div class="kpi-grid">
-      <div class="kpi"><div class="label">Объём за август</div><div class="value">62,100 <span class="unit">USDT/мес</span></div><div class="sub">3 из 7 каналов с реальным трафиком</div></div>
-      <div class="kpi"><div class="label">Средневзвешенная ставка PayIn</div><div class="value">4.87%</div><div class="sub">с учётом Payinextra, Prime и E4A</div></div>
-      <div class="kpi"><div class="label">Новый L1-уровень на сент–окт</div><div class="value">4.5%</div><div class="sub">Continental, BnPay, Astrum (пересогласован)</div></div>
+      <div class="kpi"><div class="label">Объём за сентябрь</div><div class="value">45,000 <span class="unit">лир</span></div><div class="sub">3 активных канала в каскаде</div></div>
+      <div class="kpi"><div class="label">Средняя ставка сентября</div><div class="value">4.9%</div><div class="sub">мин. лимит депозита — 1000</div></div>
+      <div class="kpi"><div class="label">Ставка октября (уже активна)</div><div class="value">4.5%</div><div class="sub">BnPay, E4A, Astrum, No5 · лимит от 500</div></div>
+      <div class="kpi"><div class="label">Новый локальный гейт (план)</div><div class="value">3.75%</div><div class="sub">на чек от 2,000 лир · план: на L1</div></div>
     </div>
 
     <div class="cols2">
       <div class="panel">
-        <h3>Каналы — август (факт)</h3>
-        <div class="bar-row"><div class="bar-label"><span class="name">Payinextra <span class="tag neutral">остановлен в начале авг · 30,000 USDT/мес пока работал</span></span></div><div class="bar-track"><div class="bar-fill neutral" style="width:60%"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span class="name">BigIdea <span class="tag idle">простой · 4.75%</span></span></div><div class="bar-track"><div class="bar-fill idle" style="width:63%"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span class="name">Prime <span class="tag live">30,000 USDT/мес · 5.2%</span></span></div><div class="bar-track"><div class="bar-fill live" style="width:69%"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span class="name">E4A <span class="tag idle">конв. 50–70% · 5.5–7.5%</span></span></div><div class="bar-track"><div class="bar-fill expensive" style="width:73%"></div></div></div>
+        <h3>Каскад — сентябрь (факт)</h3>
+        <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:16px;">Мин. лимит депозита: 1000</p>
+        <div class="bar-row"><div class="bar-label"><span class="name">BigIdea <span class="tag idle">простой</span></span><span class="val" style="font-size:12.5px;color:var(--text-muted)">4.75%</span></div><div class="bar-track"><div class="bar-fill idle" style="width:63%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span class="name">Corytech</span><span class="val" style="font-size:12.5px;color:var(--text-muted)">5%</span></div><div class="bar-track"><div class="bar-fill neutral" style="width:67%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span class="name">Prime <span class="tag live">30,000 USDT/мес</span></span><span class="val" style="font-size:12.5px;color:var(--text-muted)">5.2%</span></div><div class="bar-track"><div class="bar-fill live" style="width:69%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span class="name">E4A <span class="tag idle">конв. 50–70%</span></span><span class="val" style="font-size:12.5px;color:var(--text-muted)">5.5%</span></div><div class="bar-track"><div class="bar-fill expensive" style="width:73%"></div></div></div>
 
-        <div class="story"><strong>Что произошло на самом деле:</strong> Payinextra — самый дешёвый канал (4.5%) — нёс почти весь объём, пока работал, благодаря низкой комиссии и низким, стабильным лимитам. В начале августа канал остановился. После этого почти весь объём принял на себя Prime (5.2%) — не потому что он дешевле (BigIdea дешевле, 4.75%, но простаивает), а по той же причине: низкие, стабильные лимиты, подходящие под некрупный трафик.</div>
+        <div class="story">В каскаде работало <strong>3 активных канала</strong> (BigIdea оставался в простое). Объём за месяц — <strong>45,000 лир</strong> при средней ставке <strong>4.9%</strong>. Минимальный лимит депозита — 1000.</div>
       </div>
 
       <div class="panel">
-        <h3>План сентябрь–октябрь</h3>
-        <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:16px;">Payinextra в этот период не существует — канал отключён. Новый L1-уровень формируется из трёх каналов по той же ставке 4.5%:</p>
-        <div class="bar-row"><div class="bar-label"><span class="name">Continental (новый) <span class="tag future">лимит PayIn 500</span></span></div><div class="bar-track"><div class="bar-fill future" style="width:60%"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span class="name">BnPay (новый) <span class="tag future">лимит PayIn 500</span></span></div><div class="bar-track"><div class="bar-fill future" style="width:60%"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span class="name">Astrum <span class="tag future">пересогласован с 5.5%</span></span></div><div class="bar-track"><div class="bar-fill future" style="width:60%"></div></div></div>
+        <h3>Каскад — октябрь (факт)</h3>
+        <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:16px;">Каскад уже работает. Мин. лимит депозита: от 500</p>
+        <div class="bar-row"><div class="bar-label"><span class="name">BnPay <span class="tag future">новый</span></span><span class="val" style="font-size:12.5px;color:var(--text-muted)">4.5%</span></div><div class="bar-track"><div class="bar-fill future" style="width:60%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span class="name">E4A <span class="tag future">ставка снижена с 5.5%</span></span><span class="val" style="font-size:12.5px;color:var(--text-muted)">4.5%</span></div><div class="bar-track"><div class="bar-fill future" style="width:60%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span class="name">Astrum</span><span class="val" style="font-size:12.5px;color:var(--text-muted)">4.5%</span></div><div class="bar-track"><div class="bar-fill future" style="width:60%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span class="name">No5 <span class="tag future">новый</span></span><span class="val" style="font-size:12.5px;color:var(--text-muted)">4.5%</span></div><div class="bar-track"><div class="bar-fill future" style="width:60%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span class="name">BigIdea <span class="tag idle">простой</span></span><span class="val" style="font-size:12.5px;color:var(--text-muted)">4.75%</span></div><div class="bar-track"><div class="bar-fill idle" style="width:63%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span class="name">Corytech</span><span class="val" style="font-size:12.5px;color:var(--text-muted)">5%</span></div><div class="bar-track"><div class="bar-fill neutral" style="width:67%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span class="name">Prime</span><span class="val" style="font-size:12.5px;color:var(--text-muted)">5.2%</span></div><div class="bar-track"><div class="bar-fill live" style="width:69%"></div></div></div>
 
-        <div class="finding">
-          <div class="flabel">Вывод</div>
-          Три канала по 4.5% со стабильными низкими лимитами фактически замещают объём, который нёс Payinextra — тем же курсом, но уже тремя каналами вместо одного. Лимиты, а не только ставка, определяют, куда реально идёт трафик — это подтвердилось дважды за один месяц на двух разных каналах.
-        </div>
+        <div class="story">Каскад уже работает: четыре канала по <strong>4.5%</strong> (BnPay, E4A, Astrum, No5) впереди, затем BigIdea (простой), Corytech и Prime. Минимальный лимит депозита — от <strong>500</strong>, против 1000 в сентябре.</div>
       </div>
+    </div>
+
+    <div class="finding" style="margin-top:24px;">
+      <div class="flabel">План — следующий шаг</div>
+      <ul>
+        <li>Поставить локальный TUR-канал на <strong>первую линию каскада (L1)</strong> и активировать новую ставку <strong>3.75%</strong> для чеков от <strong>2,000 лир</strong> — фокус на более высокий чек с конечными мерчантами.</li>
+        <li><strong>Стабилизация каскада</strong> и разделение трафика между линиями каскада.</li>
+        <li><strong>Стабилизация верхней линии каскада</strong> — 3–4 канала со ставкой максимум <strong>4.5%</strong> и лимитами от <strong>250</strong>.</li>
+        <li><strong>Мониторинг:</strong> выдача реквизитов, стабильность лимитов, время работы гейта.</li>
+        <li><strong>Скрининг локальных гейтов Турции</strong> под вертикали Forex и Adult.</li>
+        <li>Цель — охватить все вертикали мерчантов: отдельный каскад под каждую вертикаль.</li>
+      </ul>
     </div>
   </div>
 </section>
