@@ -134,6 +134,25 @@
   .finding ul li{margin-bottom:7px;}
   .finding ul li:last-child{margin-bottom:0;}
 
+  /* Channel chips */
+  .chip-group-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin:14px 0 8px;}
+  .chip-group-label:first-child{margin-top:0;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{background:var(--surface-alt);border:1px solid var(--border);border-radius:20px;padding:7px 14px;font-size:13px;font-weight:650;}
+  .chip.live{border-color:var(--live);background:var(--live-bg);color:var(--live);}
+  .chip.future{border-color:var(--future);background:var(--future-bg);color:var(--future);}
+  .chip.pending{border-color:var(--pending);background:var(--pending-bg);color:var(--pending);}
+
+  /* Funnel */
+  .funnel-stage{margin-bottom:16px;}
+  .funnel-stage:last-child{margin-bottom:0;}
+  .funnel-label{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;margin-bottom:6px;}
+  .funnel-label .fname{font-weight:650;}
+  .funnel-label .fcount{font-size:20px;font-weight:800;color:var(--accent);}
+  .funnel-track{background:var(--surface-alt);border-radius:8px;height:34px;overflow:hidden;}
+  .funnel-fill{height:100%;border-radius:8px 0 0 8px;background:var(--accent);opacity:0.85;}
+  .funnel-desc{font-size:12.5px;color:var(--text-muted);margin-top:4px;}
+
   table{width:100%;border-collapse:collapse;font-size:13.5px;}
   th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);}
   th{font-size:10.5px;text-transform:uppercase;letter-spacing:0.4px;color:var(--text-muted);font-weight:700;background:var(--surface-alt);}
@@ -240,46 +259,63 @@
   <div class="slide-inner">
     <div class="slide-eyebrow">Страница 2 / 3</div>
     <div class="slide-title">Китай</div>
-    <div class="slide-sub">Август 2026 (факт) и план на сентябрь–октябрь. Данные взяты из <a href="https://github.com/JoJ-se/incas-geo-expansion-pack" target="_blank" rel="noopener">incas-geo-expansion-pack</a>.</div>
+    <div class="slide-sub">Сентябрь 2026 (факт) и план на октябрь.</div>
 
     <div class="kpi-grid">
-      <div class="kpi"><div class="label">Payout объём, август</div><div class="value">1,500,000 <span class="unit">USDT/мес</span></div><div class="sub">единственный канал с трафиком: TCL</div></div>
-      <div class="kpi"><div class="label">Payin объём, август</div><div class="value" style="color:var(--idle)">0%</div><div class="sub">все payin-каналы ещё не запущены</div></div>
-      <div class="kpi"><div class="label">Цель по объёму к концу октября</div><div class="value">3,000,000 <span class="unit">USDT/мес</span></div><div class="sub">payout, 2× к августу</div></div>
+      <div class="kpi"><div class="label">Payout объём, сентябрь</div><div class="value">3,000,000 <span class="unit">USDT/мес</span></div></div>
+      <div class="kpi"><div class="label">Payin объём, сентябрь</div><div class="value">10%</div><div class="sub">Payin Adult/Betting запущен</div></div>
+      <div class="kpi"><div class="label">Payout объём, сентябрь</div><div class="value">90%</div></div>
+      <div class="kpi"><div class="label">Цель по объёму к концу сентября</div><div class="value">3,000,000 <span class="unit">USDT/мес</span></div><div class="sub">достигнута в сентябре</div></div>
     </div>
 
     <div class="cols2">
       <div class="panel">
-        <h3>Payout — август → сентябрь–октябрь</h3>
-        <div class="bar-row"><div class="bar-label"><span class="name">TCL <span class="tag live">1,500,000 USDT/мес · 2.9% all-in</span></span></div><div class="bar-track"><div class="bar-fill live" style="width:68%"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span class="name">Новый канал (HTX P2P +3%) <span class="tag future">подтверждён · ~4 п.п. дешевле</span></span></div><div class="bar-track"><div class="bar-fill future" style="width:75%"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span class="name">Второй новый канал <span class="tag pending">ставка не подтверждена</span></span></div><div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--pending)"></div></div></div>
-
-        <div class="story"><strong>TCL:</strong> 2.7% + 0.2% агент + курс xe.com = 2.9% all-in. <strong>Новый канал:</strong> HTX P2P +3% — номинально похоже, но наценка уже «зашита» в биржевой курс, а не добавлена поверх референсного курса. По оценке команды платежей, реальная экономия ≈ 4 п.п.</div>
-
-        <div class="table-wrap">
-          <table>
-            <tr><th>Пример: Inwizo, 10,000 CNY</th><th>TCL</th><th>Новый канал</th></tr>
-            <tr><td>Маржа</td><td>0.1%</td><td><strong>~5.0%</strong></td></tr>
-          </table>
-        </div>
+        <h3>Каскад — сентябрь (факт)</h3>
+        <div class="chip-group-label">Payout — 1 канал в каскаде</div>
+        <div class="chip-row"><span class="chip live">TCL</span></div>
+        <div class="chip-group-label">Payin — 2 канала в каскаде</div>
+        <div class="chip-row"><span class="chip live">TCL</span><span class="chip live">Moneystery</span></div>
       </div>
 
       <div class="panel">
-        <h3>Цели к концу октября</h3>
-        <div class="bar-row"><div class="bar-label"><span class="name">Payout объём</span><span style="font-size:12.5px;color:var(--text-muted)">1.5M → 3.0M USDT/мес</span></div><div class="bar-track"><div class="bar-fill future" style="width:100%"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span class="name">Payin объём</span><span style="font-size:12.5px;color:var(--text-muted)">0 → ~50,000 USDT/день</span></div><div class="bar-track"><div class="bar-fill future" style="width:100%"></div></div></div>
-        <div class="bar-row"><div class="bar-label"><span class="name">Смешанная маржа</span><span style="font-size:12.5px;color:var(--text-muted)">0.1% → 4–5%</span></div><div class="bar-track"><div class="bar-fill future" style="width:90%"></div></div></div>
-
-        <div class="finding">
-          <div class="flabel">Также в плане</div>
-          Запуск corporate payout и WeChat/UnionPay payout после завершения интеграции · рост объёма в вертикалях Adult и High Risk · завершение интеграции и запуск WeChat Payin.
-        </div>
-        <div class="finding">
-          <div class="flabel">Payin — на старте</div>
-          TCL payin (4.5%, конверсия 90%) — самый дешёвый и уже протестированный канал, станет приоритетным, как только пойдёт трафик.
-        </div>
+        <h3>Каскад — октябрь (план)</h3>
+        <div class="chip-group-label">Payout — 3 канала в каскаде</div>
+        <div class="chip-row"><span class="chip future">Kanyon</span><span class="chip future">TCL</span><span class="chip future">Moneystery</span></div>
+        <div class="funnel-desc" style="margin-bottom:14px;">+ UnionPay и WeChat payout — в интеграции</div>
+        <div class="chip-group-label">Payin — 3 метода</div>
+        <div class="chip-row"><span class="chip future">TCL (Alipay)</span><span class="chip future">OverPay (WeChat)</span><span class="chip future">Moneystery (Alipay)</span></div>
       </div>
+    </div>
+
+    <div class="finding" style="margin-top:24px;">
+      <div class="flabel">Аналитика канального микса и новые проекты</div>
+      <ul>
+        <li><strong>Диверсификация методов на ГЕО:</strong> Alipay (payin и payout), WeChat (payout живой, payin запускается через OverPay), UnionPay (новый метод, в интеграции).</li>
+        <li><strong>Новые проекты в интеграции:</strong> Kanyon (payout), UnionPay payout, WeChat payout — на выпуск в сентябре–октябре.</li>
+        <li><strong>Payin</strong> вырос с 0% (август) до <strong>10%</strong> оборота — запущены Adult и Betting направления.</li>
+      </ul>
+    </div>
+
+    <div class="panel" style="margin-top:24px;">
+      <h3>Воронка поиска каналов — сентябрь</h3>
+      <div class="funnel-stage">
+        <div class="funnel-label"><span class="fname">Встречи (офлайн/онлайн), payin + payout</span><span class="fcount">20</span></div>
+        <div class="funnel-track"><div class="funnel-fill" style="width:100%"></div></div>
+      </div>
+      <div class="funnel-stage">
+        <div class="funnel-label"><span class="fname">Офферы рассмотрены и отклонены по ставкам</span><span class="fcount">7</span></div>
+        <div class="funnel-track"><div class="funnel-fill" style="width:35%"></div></div>
+      </div>
+      <div class="funnel-stage">
+        <div class="funnel-label"><span class="fname">Финтех-компании отклонены — нативные рельсы Alipay/WeChat, не процессят РФ-трафик</span><span class="fcount">5</span></div>
+        <div class="funnel-track"><div class="funnel-fill" style="width:25%"></div></div>
+      </div>
+      <div class="funnel-stage">
+        <div class="funnel-label"><span class="fname">Методы взяты в интеграцию на выплаты — Alipay, WeChat + UnionPay (новый метод)</span><span class="fcount">3</span></div>
+        <div class="funnel-track"><div class="funnel-fill" style="width:15%"></div></div>
+      </div>
+
+      <div class="story">На данный момент работающие методы для РФ-трафика — <strong>P2P-based Alipay/WeChat</strong>. Много фильтрации по: качеству трафика, времени финализации, реквизиту оплаты/перевода, удобству и эффективности интеграции, разумным условиям сэттла/пополнения.</div>
     </div>
   </div>
 </section>
